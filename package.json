@@ -1,0 +1,18 @@
+{
+  "name": "disturb-me",
+  "main": "./lib/disturb-me",
+  "version": "0.0.0",
+  "description": "Disturb yourself by an image moving in the window randomly",
+  "keywords": [
+    "nonsense"
+  ],
+  "repository": "https://github.com/kaitoy/disturb-me",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "velocity-animate": ">=1.2.0",
+    "jquery": ">=2.0.0"
+  }
+}
