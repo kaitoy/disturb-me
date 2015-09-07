@@ -1,5 +1,6 @@
 jQuery = require 'jquery'
 Velocity = require 'velocity-animate'
+path = require 'path'
 
 module.exports =
 class Disturber
@@ -60,7 +61,7 @@ class Disturber
     @element[0]
 
   start: ->
-    @element.attr('src', @bornImage)
+    @element.attr('src', @_buildSrcUrl @bornImage)
     setTimeout(jQuery.proxy(@move, @), @bornDuration)
 
   move: ->
@@ -100,7 +101,7 @@ class Disturber
         duration = 5 * distance / @leftSpeed
         @_currentX -= distance
 
-    @element.attr('src', src)
+    @element.attr('src', @_buildSrcUrl src)
 
     Velocity(
       @element,
@@ -116,8 +117,17 @@ class Disturber
   stop: ->
     @_stopping = true
     Velocity(@element, 'stop')
-    @element.attr('src', @dieImage)
+    @element.attr('src', @_buildSrcUrl @dieImage)
     setTimeout(jQuery.proxy(@destroy, @), @dieDuration)
 
   _random: (min, max) ->
     return Math.floor(Math.random() * (max - min + 1)) + min;
+
+  _buildSrcUrl: (url) ->
+    if url.indexOf('atom://') is 0
+      relativePath = path.normalize(url.substr(7))
+      atomHome = process.env.ATOM_HOME
+      filePath = path.join(atomHome, 'packages', relativePath)
+    else
+      filePath = url
+    return "#{filePath}?time=#{Date.now()}"
