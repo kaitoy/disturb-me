@@ -1,7 +1,7 @@
 {
   "name": "disturb-me",
   "main": "./lib/disturb-me",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Disturb yourself by an image moving in the window randomly",
   "keywords": [
     "nonsense"
