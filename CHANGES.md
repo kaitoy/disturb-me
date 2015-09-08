@@ -1,3 +1,7 @@
+0.1.3
+====
+* Fix a bug that prevents installation.
+
 0.1.2
 ====
 * Fix a bug that causes an error when upgrade.
