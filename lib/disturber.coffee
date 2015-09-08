@@ -51,8 +51,6 @@ class Disturber
       .css('top', @_currentY)
       .css('left', @_currentX)
 
-  serialize: ->
-
   destroy: ->
     @element.remove()
     @element = null

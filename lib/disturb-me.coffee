@@ -70,9 +70,6 @@ module.exports = DisturbMe =
       @disturber.destroy()
       @disturber = null
 
-  serialize: ->
-    disturberState: @disturber.serialize()
-
   toggle: ->
     if @disturber?
       @disturber.stop()

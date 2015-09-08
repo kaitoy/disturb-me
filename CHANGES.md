@@ -1,3 +1,7 @@
+0.1.2
+====
+* Fix a bug that causes an error when upgrade.
+
 0.1.1
 ====
 * Fix a bug where animated gifs with limited loops don't work after caching.
